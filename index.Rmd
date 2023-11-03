@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
-description: "My final project"
+author: "Sebastian Lennox"
+description: "Climate Change Project"
 output:
   distill::distill_article:
     self_contained: false
@@ -11,4 +11,21 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+(Very rough draft, to be improved) 
+I hypothesize that the least intense periods of Carbon Dioxide increase in the atmosphere occured during the 1990s and 2000s. This is because the detrimental effects of Carbon Dioxide in the atmosphere had been researched and observed, and certain global movements, including the Kyoto Protocol of 1997, had been signed with the hopes of reducing emissions from entire countries. In this project, I will be observing the trends of Carbon Dioxide content in the atmosphere and attempt to use this information to infer why certain spikes and drops occured based on other carbon emission data brought in. The variable is measured in PPM (parts per million) of CO2 in the atmosphere. The explanatory variable at the moment is years, but will eventually transition to carbon emissions in specific countries (also likely measured in PPM). If the data demonstrates low carbon emissions in all countries during the 1990s and 2000s, it is likely that the PPM of CO2 will also reflect this. However, if there is even a slight discrepancy in CO2 production during these decades, my hypothesis will likely be disproved. 
+
+```{r echo = FALSE}
+library(tidyverse)
+library(readr)
+CO2_Content <- read.csv("~/Downloads/co2-mm-mlo_csv.csv")
+
+CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) + 
+  geom_histogram() + 
+  labs(x = "Interpolated CO2 Content (in PPM)", 
+       y = "Frequency of CO2 Contents",
+       title = "Frequency of CO2 Content in months from 1958 to 2018", 
+       caption = "Interpolated data based on Average and Trend data") 
+
+CO2vsYears
+```
+
