@@ -25,7 +25,8 @@ CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) +
        y = "Frequency of CO2 Contents",
        title = "Frequency of CO2 Content in months from 1958 to 2018", 
        caption = "Interpolated data based on Average and Trend data") 
-
 CO2vsYears
+
+knitr::kable(CO2_Content)
 ```
 
