@@ -43,4 +43,3 @@ CO2vsConsistency <- ggplot(CO2_Content, aes(x = Number.of.Days, y = Interpolated
   geom_smooth(method = "lm", se = FALSE, color = "blue", size = 1.5)
 CO2vsConsistency
 ```
-
