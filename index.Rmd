@@ -17,6 +17,9 @@ I hypothesize that the least intense periods of Carbon Dioxide increase in the a
 ```{r echo = FALSE}
 library(tidyverse)
 library(readr)
+
+head(knitr::kable(CO2_Content), 10)
+
 CO2_Content <- read.csv("~/Downloads/co2-mm-mlo_csv.csv")
 
 CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) + 
@@ -27,6 +30,17 @@ CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) +
        caption = "Interpolated data based on Average and Trend data") 
 CO2vsYears
 
-head(knitr::kable(CO2_Content), 10)
+
+```
+
+```{r echo = FALSE}
+CO2vsConsistency <- ggplot(CO2_Content, aes(x = Number.of.Days, y = Interpolated)) + 
+  geom_point() + 
+  labs(x = "Number of Daily Averages Measured for a Month", 
+       y = "Interpolated CO2 Content (in PPM)",
+       title = "Frequency of CO2 Content in months from 1958 to 2018", 
+       caption = "Interpolated data based on Average and Trend data") +
+  geom_smooth(method = "lm", se = FALSE, color = "blue", size = 1.5)
+CO2vsConsistency
 ```
 
