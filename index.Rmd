@@ -27,6 +27,6 @@ CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) +
        caption = "Interpolated data based on Average and Trend data") 
 CO2vsYears
 
-knitr::kable(CO2_Content)
+head(knitr::kable(CO2_Content), 10)
 ```
 
