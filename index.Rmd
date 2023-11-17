@@ -18,9 +18,9 @@ I hypothesize that the least intense periods of Carbon Dioxide increase in the a
 library(tidyverse)
 library(readr)
 
-head(knitr::kable(CO2_Content), 10)
-
 CO2_Content <- read.csv("~/Downloads/co2-mm-mlo_csv.csv")
+
+head(knitr::kable(CO2_Content), 10)
 
 CO2vsYears <- ggplot(CO2_Content, aes(x = Interpolated)) + 
   geom_histogram() + 
