@@ -38,9 +38,9 @@ CO2vsConsistency <- ggplot(CO2_Content, aes(x = Number.of.Days, y = Interpolated
   geom_point() + 
   labs(x = "Number of Daily Averages Measured for a Month", 
        y = "Interpolated CO2 Content (in PPM)",
-       title = "Frequency of CO2 Content in months from 1958 to 2018", 
+       title = "CO2 Content in the Atmosphere as a Function of the Number of Days an Average CO2 Content was Measured for a Particular Month", 
        caption = "Interpolated data based on Average and Trend data") +
-  geom_smooth(method = "lm", se = FALSE, color = "blue", size = 1.5)
+  geom_smooth(method = "lm", se = FALSE, color = "blue", linewidth = 1.5)
 CO2vsConsistency
 ```
-
+The above data does not support my hypothesis. In the graph, the line of best fit indicates that with the more daily averages collected (-1 and 31 being the extremes for the number of averages collected in a month), there was more CO2 content in the atmosphere. This disagrees with my hypothesis because the months with no daily average measurements (as signified by -1) were concentrated in the early years of this data collection (pre-1974), whereas later years (1990s-2000s) featured several months with significant daily averages recorded. Ultimately, this seems to indicate that the 1990s and 2000s had high amounts of CO2 concentration in the atmosphere. However, this analysis also does not take into account the years between 1973 and 1990 in addition to those between 2010 and 2018 that had high numbers of data collection across a month. Grouping the data more specifically within these ranges in another analysis may provide a different result with respect to my hypothesis. 
